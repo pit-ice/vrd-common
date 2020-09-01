@@ -72,12 +72,11 @@ C:\Temp> notepad cosmosdb-articles-backup.json
 {"_id":{"$oid":"5eacf7da8f33515d54c8574a"},"title":"article01","content":"content01","writer":"Velopert","likes":0.0,"comments":[]}
 {"_id":{"$oid":"5eacf7da8f33515d54c8574c"},"title":"article03","content":"content03","writer":"Bravo","likes":40.0,"comments":[{"name":"Charlie","message":"Hey Man!"},{"name":"Delta","message":"Hey Man!"}]}
 {"_id":{"$oid":"5eacf7da8f33515d54c8574b"},"title":"article02","content":"content02","writer":"Michael","likes":23.0,"comments":[{"name":"Bravo","message":"Hey Man!"}]}
-{"_id":{"$oid":"5f4cf9a82eac1451fabc2abd"},"title":"vrd-cosmos 테스트","content":"컨텐츠 테스트","writer":"아이유"}
 
 5. MongoDB 데이터 import
 C:\Temp>mongoimport --db vrd_test --collection articles --file cosmosdb-articles-backup.json
 2020-08-31T23:21:04.239+0900    connected to: mongodb://localhost/
-2020-08-31T23:21:04.323+0900    4 document(s) imported successfully. 0 document(s) failed to import.
+2020-08-31T23:21:04.323+0900    3 document(s) imported successfully. 0 document(s) failed to import.
 
 6. 이관 데이터 확인
 C:\Temp>mongo
@@ -87,7 +86,6 @@ switched to db vrd_test
 { "_id" : ObjectId("5eacf7da8f33515d54c8574a"), "title" : "article01", "content" : "content01", "writer" : "Velopert", "likes" : 0, "comments" : [ ] }
 { "_id" : ObjectId("5eacf7da8f33515d54c8574b"), "title" : "article02", "content" : "content02", "writer" : "Alpha", "likes" : 23, "comments" : [ { "name" : "Bravo", "message" : "Hey Man!" } ] }
 { "_id" : ObjectId("5eacf7da8f33515d54c8574c"), "title" : "article03", "content" : "content03", "writer" : "Michael", "likes" : 40, "comments" : [ { "name" : "Charlie", "message" : "Hey Man!" }, { "name" : "Delta", "message" : "Hey Man!" } ] }
-{ "_id" : ObjectId("5f4cf9a82eac1451fabc2abd"), "title" : "vrd-cosmos 테스트", "content" : "컨텐츠 테스트", "writer" : "아이유" }
 
 7. 이관 후 입력/수정/삭제 테스트
 # 수정 테스트(content중 "content02"인 데이터의 writer를 "Michael mongo"로 수정)
@@ -96,7 +94,6 @@ db.articles.find()
 { "_id" : ObjectId("5eacf7da8f33515d54c8574a"), "title" : "article01", "content" : "content01", "writer" : "Velopert", "likes" : 0, "comments" : [ ] }
 { "_id" : ObjectId("5eacf7da8f33515d54c8574b"), "title" : "article02", "content" : "content02", "writer" : "Michael mongo", "likes" : 23, "comments" : [ { "name" : "Bravo", "message" : "Hey Man!" } ] }
 { "_id" : ObjectId("5eacf7da8f33515d54c8574c"), "title" : "article03", "content" : "content03", "writer" : "Bravo", "likes" : 40, "comments" : [ { "name" : "Charlie", "message" : "Hey Man!" }, { "name" : "Delta", "message" : "Hey Man!" } ] }
-{ "_id" : ObjectId("5f4cf9a82eac1451fabc2abd"), "title" : "vrd-cosmos 테스트", "content" : "컨텐츠 테스트", "writer" : "아이유" }
 
 # 삭제 테스트
 db.articles.remove({ title: 'vrd-cosmos 테스트' });

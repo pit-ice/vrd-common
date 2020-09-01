@@ -32,7 +32,7 @@ spring:
       uri: mongodb://wingtiptoysmongodb:AbCdEfGhIjKlMnOpQrStUvWxYz==@wingtiptoysmongodb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb
 ```
 
-> Java 이외의 다른 언어와의 호환성으로 고려하여 JSON 형태로 저장
+> Java 이외의 다른 언어와의 호환성을 고려하여 JSON 형태로 저장
 ```
 String json = "{ 'name' : 'lokesh' , " +
                 "'website' : 'howtodoinjava.com' , " +

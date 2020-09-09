@@ -16,7 +16,7 @@ Azure Sendgrid 서비스의 경우 서비스 생성 후 Sendgrid 홈페이지로
  **ex)**  *"substitutions" [optional] : { "%ID%": "test@yopmail.com", "%NAME%": "홍길동" }*
 
 ## from 
-object **[required] ** : 발신자 정보 sendgird 인증 아이디가 무료 도메인(gmail.com 등) 인 경우는 인증 아이디 왜 다른 아이디로 메일 발신 주소 변경 시 오류
+object **[required]** : 발신자 정보 sendgird 인증 아이디가 무료 도메인(gmail.com 등) 인 경우는 인증 아이디 왜 다른 아이디로 메일 발신 주소 변경 시 오류
  - **email** string **[required] ** : 발신자 이메일
  -  **name** string [optional] : 발신자 명  
  

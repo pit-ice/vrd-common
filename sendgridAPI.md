@@ -8,7 +8,7 @@ ver 1.1
 - memberRegister : 회원 가입   (name/이름, memberType/회원타입  ) 
 - memberApproval : 회원 승인 요청 (name/이름, memberId/회원아이디 , memberType/회원타입)
 - memberResetPassword : 회원 비밀번호 초기화 (memberSeq/회원아이디, authCode/초기화인증코드) 
-- memberEmailAuth : 메일인증 (memberSeq/회원아이디, authCode/인증코드)
+- memberEmailAuth : 메일인증 (memberSeq/회원아이디, authCode/인증코드, expireDate/만료시간)
 - memberQnaRegister : 문의등록 (qnaSeq/문의아이디 , qnaTitle/문의제목, qnaContent/문의내용)
 - memberQnaAnswer : 문의답변 (qnaSeq/문의아이디 , qnaTitle/문의제목, qnaContent/문의내용, ansTitle/답변제목, ansContent/답변내용)
   

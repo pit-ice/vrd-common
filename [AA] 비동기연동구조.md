@@ -1,5 +1,5 @@
 ## webapp request 
--  POST http://api.vrd-skgc.com/noti/api/sse/pub
+-  POST http://api.vrd-skgc.com/noti/pub
 - eventType 및 userId 값으로 post 요청
 - azure function endpoint 호출 후 결과로 eventId 수신
 - response 데이터는 azure function 호출 응답결과인 eventId 를 반환
@@ -78,7 +78,7 @@ Output
 }
 ```
 ## SSE 이벤트 결과 수신
--  POST http://api.vrd-skgc.com/noti/api/sse/notification/{id}
+-  POST http://api.vrd-skgc.com/noti/sub/{id}
   
 ```
 {

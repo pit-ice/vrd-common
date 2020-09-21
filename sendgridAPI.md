@@ -4,7 +4,7 @@ ver 1.2
 backend 로 이메일 발송을 요청합니다.
 
 postman 참조
-https://documenter.getpostman.com/view/4052929/TVCY6Bhh#34ecf972-9384-4847-b8d4-7308a1ffa5c9
+https://documenter.getpostman.com/view/4052929/TVCY6Bhh#54e3deb8-8b86-47ad-a51f-21e71d34b29c
 
 
 ## Template 종류 

@@ -1,5 +1,11 @@
 # EMAIL 전송 
-ver 1.1
+ver 1.2
+
+backend 로 이메일 발송을 요청합니다.
+
+postman 참조
+https://documenter.getpostman.com/view/4052929/TVCY6Bhh#34ecf972-9384-4847-b8d4-7308a1ffa5c9
+
 
 ## Template 종류 
 - id : 설명 (전달값 key/value)
@@ -104,8 +110,10 @@ List[String]  [optional] : 첨부파일 경로
 # Sendgird API
 
   
-
+sendgrid API로 샌드그리드 서버로 바로 메일 발송을 요청합니다.
 Azure Sendgrid 서비스의 경우 서비스 생성 후 Sendgrid 홈페이지로 이동하여 Key를 발급 받는 형식이라 가입 경로만 다를 뿐 실제 API-Key를 발급 받은 후 사용 방법은 일반 Sendgrid와 동일합니다.
+postman 참조 : 
+https://documenter.getpostman.com/view/4052929/TVCY6Bhh#34ecf972-9384-4847-b8d4-7308a1ffa5c9
 
   
 

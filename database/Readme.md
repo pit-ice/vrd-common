@@ -1,6 +1,6 @@
 ﻿# Database 테이블/코멘트 생성 및 이력
 
-## SKGC-vrnd(MariaDB) 개발서버 information
+## 개발서버 information - SKGC-vrnd(MariaDB) 
 
 1. IP : vrd-dev.mariadb.database.azure.com
 2. Port : 3306

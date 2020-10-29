@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: vrd-private-web
+  namespace: vrd-dev
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  tls:
+    - hosts:
+        - pvlab.skccvrd.kubepia.net
+      secretName: vrd-tls-secret
+  rules:
+  - host: pvlab.skccvrd.kubepia.net
+    http:
+      paths:
+      - backend:
+          serviceName: vrd-private
+          servicePort: 80
+        path: /(.*)

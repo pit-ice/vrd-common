@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: vrd-public-api
+  namespace: vrd-dev
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+spec:
+  tls:
+    - hosts:
+        - api.skccvrd.kubepia.net
+      secretName: vrd-tls-secret
+  rules:
+  - host: api.skccvrd.kubepia.net
+    http:
+      paths:
+      - backend:
+          serviceName: api-member
+          servicePort: 8080
+        path: /member/(.*)
+      - backend:
+          serviceName: api-auth
+          servicePort: 8080
+        path: /auth/(.*)
+      - backend:
+          serviceName: api-notification
+          servicePort: 8080
+        path: /notification/(.*)
+      - backend:
+          serviceName: api-vrdlab
+          servicePort: 8080
+        path: /vrdlab/(.*)
